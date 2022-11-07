@@ -33,6 +33,7 @@
         class="list-group"
         ghost-class="ghost"
         :move="checkMove"
+        :multiDrag="true"
         @start="dragging = true"
         @end="dragging = false"
       >

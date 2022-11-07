@@ -1,4 +1,4 @@
-import Sortable from "sortablejs";
+import Sortable, { MultiDrag } from "sortablejs";
 import { insertNodeAt, removeNode } from "./util/htmlHelper";
 import { console } from "./util/console";
 import {
@@ -9,6 +9,8 @@ import {
 import { computeComponentStructure } from "./core/renderHelper";
 import { events } from "./core/sortableEvents";
 import { h, defineComponent, nextTick } from "vue";
+
+Sortable.mount(new MultiDrag());
 
 function emit(evtName, evtData) {
   nextTick(() => this.$emit(evtName.toLowerCase(), evtData));
